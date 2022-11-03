@@ -1,0 +1,12 @@
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\bin\Debug\net6.0\CakeShop.Models.deps.json
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\bin\Debug\net6.0\CakeShop.Models.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\bin\Debug\net6.0\CakeShop.Models.pdb
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.csproj.AssemblyReference.cache
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.AssemblyInfoInputs.cache
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.AssemblyInfo.cs
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.csproj.CoreCompileInputs.cache
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\refint\CakeShop.Models.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\CakeShop.Models.pdb
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.Models\obj\Debug\net6.0\ref\CakeShop.Models.dll
