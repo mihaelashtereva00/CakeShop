@@ -1,14 +1,17 @@
-using CakeShop.DL.Interfaces;
-using CakeShop.DL.MongoRepositories;
+using CakeShop.Extensions;
 using CakeShop.Models.Models.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();           
-builder.Services.AddSingleton<IPurchaseRepository, PurchaseRepository>();
+builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.RegisterRepositories()
+                .RegisterServices();
+//.AddAutoMapper(typeof(Program)); //LOOK
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.Configure<MongoDbConfiguration>(builder.Configuration.GetSection(nameof(MongoDbConfiguration)));
 

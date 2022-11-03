@@ -1,8 +1,10 @@
 ﻿using CakeShop.DL.Interfaces;
+using CakeShop.Models.Models;
 using CakeShop.Models.Models.Configurations;
 using CakeShop.Models.Models.Requests;
 using CakeShop.Models.ModelsMongoDB;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace CakeShop.DL.MongoRepositories
@@ -21,9 +23,15 @@ namespace CakeShop.DL.MongoRepositories
             _database = _dbClient.GetDatabase(_options.Value.DatabaseName);
             _collection = _database.GetCollection<Purchase>("Purchase");
         }
-        public async Task<Purchase> GetPurchases(int userId)
+        public async Task<IEnumerable<Purchase>> GetPurchases(Guid clientId)
         {
-            var filter = Builders<Purchase>.Filter.Eq("UserId", userId);
+            var result = _collection.Find(new BsonDocument()).ToEnumerable<Purchase>();
+            return await Task.FromResult(result);
+        } 
+        
+        public async Task<Purchase> GetPurchasesById(Guid purchaseId)
+        {
+            var filter = Builders<Purchase>.Filter.Eq("Id", purchaseId);
             var purchase = _collection.Find(filter).FirstOrDefault();
 
             return await Task.FromResult(purchase);
@@ -44,9 +52,10 @@ namespace CakeShop.DL.MongoRepositories
             return await Task.FromResult(document);
         }
 
-        public async Task<Purchase> DeletePurchase(Purchase purchase)
+        public async Task<Purchase> DeletePurchase(Guid purcahseId)
         {
-            _collection.DeleteOne(x => x.Id == purchase.Id);
+            var purchase = await GetPurchasesById(purcahseId);
+            var result = _collection.DeleteOne(x => x.Id == purcahseId);
             return await Task.FromResult(purchase);
         }
     }

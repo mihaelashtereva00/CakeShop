@@ -1,0 +1,17 @@
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.BL.deps.json
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.BL.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.BL.pdb
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.csproj.AssemblyReference.cache
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.AssemblyInfoInputs.cache
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.AssemblyInfo.cs
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.csproj.CoreCompileInputs.cache
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\refint\CakeShop.BL.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.pdb
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\ref\CakeShop.BL.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.DL.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.Models.dll
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.DL.pdb
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\bin\Debug\net6.0\CakeShop.Models.pdb
+C:\Users\m.shtereva\Documents\GithubRepo\CakeShop\CakeShop\CakeShop.BL\obj\Debug\net6.0\CakeShop.BL.csproj.CopyComplete
