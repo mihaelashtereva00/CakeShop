@@ -1,7 +1,5 @@
 ﻿using CakeShop.DL.Interfaces;
-using CakeShop.Models.Models;
 using CakeShop.Models.Models.Configurations;
-using CakeShop.Models.Models.Requests;
 using CakeShop.Models.ModelsMongoDB;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
@@ -21,14 +19,15 @@ namespace CakeShop.DL.MongoRepositories
             _options = options;
             _dbClient = new MongoClient(_options.Value.ConnectionString);
             _database = _dbClient.GetDatabase(_options.Value.DatabaseName);
-            _collection = _database.GetCollection<Purchase>("Purchase");
+            _collection = _database.GetCollection<Purchase>(_options.Value.PurcahsesCollection);
         }
-        public async Task<IEnumerable<Purchase>> GetPurchases(Guid clientId)
+
+        public async Task<IEnumerable<Purchase>> GetPurchasesForClient(int clientId)
         {
-            var result = _collection.Find(new BsonDocument()).ToEnumerable<Purchase>();
+            var result = _collection.Find(new BsonDocument()).ToEnumerable<Purchase>().Where(c => c.ClientId == clientId);
             return await Task.FromResult(result);
-        } 
-        
+        }
+
         public async Task<Purchase> GetPurchasesById(Guid purchaseId)
         {
             var filter = Builders<Purchase>.Filter.Eq("Id", purchaseId);
@@ -37,19 +36,19 @@ namespace CakeShop.DL.MongoRepositories
             return await Task.FromResult(purchase);
         }
 
-        public async Task<Purchase?> CreatePurchase(PurchaseRequest purchaseRequest)
+        public async Task<IEnumerable<Purchase>> GetPurchasesAfterDate(DateTime date)
         {
-            var document = new Purchase()
-            {
-                Id = Guid.NewGuid(),
-                Cakes = purchaseRequest.Cakes,
-                TotalMoney = purchaseRequest.TotalMoney,
-                ClientId = purchaseRequest.ClientId
-            };
+            var filter = Builders<Purchase>.Filter.Where(p => p.Date > date);
+            var purchases = _collection.Find(filter).ToEnumerable();
 
-            _collection.InsertOne(document);
+            return await Task.FromResult(purchases);
+        }
 
-            return await Task.FromResult(document);
+        public async Task<Purchase?> CreatePurchase(Purchase purchase)
+        {
+            _collection.InsertOne(purchase);
+
+            return await Task.FromResult(purchase);
         }
 
         public async Task<Purchase> DeletePurchase(Guid purcahseId)
@@ -58,5 +57,18 @@ namespace CakeShop.DL.MongoRepositories
             var result = _collection.DeleteOne(x => x.Id == purcahseId);
             return await Task.FromResult(purchase);
         }
+
+        public async Task<Purchase> UpdatePurchase(Purchase purcahse)
+        {
+
+            var filter = Builders<Purchase>.Filter.Eq("Id", purcahse.Id);
+            var update = Builders<Purchase>.Update.Set(s => s.Cakes, purcahse.Cakes)
+                                                  .Set(s => s.TotalMoney, purcahse.TotalMoney);
+
+            _collection.UpdateOne(filter, update);
+
+            return await Task.FromResult(purcahse);
+        }
+
     }
 }

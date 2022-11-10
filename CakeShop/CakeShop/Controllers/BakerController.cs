@@ -1,6 +1,6 @@
-﻿using CakeShop.BL.Interfaces;
+﻿using CakeShop.Models.MediatRCommands.BakerCommands;
 using CakeShop.Models.Models.Requests;
-using CakeShop.Models.Models;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -10,23 +10,21 @@ namespace CakeShop.Controllers
     [Route("[controller]")]
     public class BakerController : ControllerBase
     {
-        private readonly IBakerService _bakerService;
         private readonly ILogger<BakerController> _logger;
-        //  private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
-        public BakerController(IBakerService bakerService, ILogger<BakerController> logger)//, IMediator mediator)
+        public BakerController( ILogger<BakerController> logger, IMediator mediator)
         {
-            _bakerService = bakerService;
             _logger = logger;
-            // _mediator = mediator;
+            _mediator = mediator;
         }
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost("Add baker")]
-        public async Task<IActionResult> AddBaker(BakerRequest bakerRequest)
+        public async Task<IActionResult> AddBaker([FromBody] BakerRequest bakerRequest)
         {
-            var result = await _bakerService.AddBaker(bakerRequest);
+            var result = await _mediator.Send(new AddBakerCommand(bakerRequest));
 
             if (result.HttpStatusCode == HttpStatusCode.BadRequest)
                 return BadRequest(result);
@@ -37,9 +35,9 @@ namespace CakeShop.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPut(nameof(UpdateBaker))]
-        public async Task<IActionResult> UpdateBaker(Baker baker)
+        public async Task<IActionResult> UpdateBaker(UpdateBakerRequest bakerRequest)
         {
-            var result = await _bakerService.UpdateBaker(baker);
+            var result = await _mediator.Send(new UpdateBakerCommand(bakerRequest));
 
             if (result.HttpStatusCode == HttpStatusCode.BadRequest)
                 return BadRequest(result);
@@ -50,9 +48,9 @@ namespace CakeShop.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpDelete(nameof(DeleteBaker))]
-        public async Task<IActionResult> DeleteBaker(Guid bakerId)
+        public async Task<IActionResult> DeleteBaker(int bakerId)
         {
-            var result = await _bakerService.DeleteBaker(bakerId);
+            var result = await _mediator.Send(new DeleteBakerCommand(bakerId));
 
             if (result == null)
                 return BadRequest(result);
@@ -65,9 +63,9 @@ namespace CakeShop.Controllers
         [HttpGet(nameof(GetAllBakers))]
         public async Task<IActionResult> GetAllBakers()
         {
-            var result = await _bakerService.GetAllBakers();
+            var result = await _mediator.Send(new GetAllBakersCommand());
 
-            if (result.Count() < 1)
+            if (result.Bakers.Count() < 1)
                 return BadRequest(result);
 
             return Ok(result);
@@ -76,9 +74,9 @@ namespace CakeShop.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet(nameof(GetBakerById))]
-        public async Task<IActionResult> GetBakerById(Guid bakerId)
+        public async Task<IActionResult> GetBakerById(int bakerId)
         {
-            var result = await _bakerService.GetBakertById(bakerId);
+            var result = await _mediator.Send(new GetBakereByIdCommand(bakerId));
 
             if (result == null)
                 return BadRequest(result);
