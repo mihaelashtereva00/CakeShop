@@ -74,7 +74,7 @@ namespace CakeShop.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPut("UpdatePurchase")]
-        public async Task<IActionResult> UpdatePurchase(UpdatePurchaseRequest purchaseRequest)
+        public async Task<IActionResult> UpdatePurchase(UpdatePurchseCakesRequest purchaseRequest)
         {
             var result = await _mediator.Send(new UpdatePurchaseCommand(purchaseRequest));
 

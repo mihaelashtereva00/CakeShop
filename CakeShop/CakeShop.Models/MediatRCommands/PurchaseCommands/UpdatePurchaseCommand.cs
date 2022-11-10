@@ -4,7 +4,7 @@ using MediatR;
 
 namespace CakeShop.Models.MediatRCommands.PurchaseCommands
 {
-    public record UpdatePurchaseCommand(UpdatePurchaseRequest updatePurchaseRequest) : IRequest<PurchaseResponse>
+    public record UpdatePurchaseCommand(UpdatePurchseCakesRequest updatePurchaseRequest) : IRequest<PurchaseResponse>
     {
     }
 }

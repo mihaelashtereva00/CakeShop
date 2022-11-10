@@ -1,17 +1,12 @@
 ﻿using AutoMapper;
 using CakeShop.DL.Interfaces;
 using CakeShop.Models.MediatRCommands.PurchaseCommands;
-using CakeShop.Models.Models.Requests;
+using CakeShop.Models.Models.ModelsSqlDB;
 using CakeShop.Models.Models.Responses.PurchaseResponses;
 using CakeShop.Models.ModelsMongoDB;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CakeShop.BL.MediatRCommandHandlers.PurcahseHandlers
 {
@@ -19,47 +14,59 @@ namespace CakeShop.BL.MediatRCommandHandlers.PurcahseHandlers
     {
         private readonly IPurchaseRepository _purchaseRepository;
         private readonly IClientRepository _clientRepository;
+        private readonly ICakeRepository _cakeRepository;
         private ILogger<UpdatePurcahseHandler> _logger;
         private IMapper _mapper;
 
-        public UpdatePurcahseHandler(IPurchaseRepository purchaseRepository, ILogger<UpdatePurcahseHandler> logger, IMapper mapper, IClientRepository clientRepository)
+        public UpdatePurcahseHandler(IPurchaseRepository purchaseRepository, ILogger<UpdatePurcahseHandler> logger, IMapper mapper, IClientRepository clientRepository, ICakeRepository cakeRepository)
         {
             _purchaseRepository = purchaseRepository;
             _logger = logger;
             _mapper = mapper;
             _clientRepository = clientRepository;
+            _cakeRepository = cakeRepository;
         }
 
         public async Task<PurchaseResponse> Handle(UpdatePurchaseCommand purchaseRequest, CancellationToken cancellationToken)
         {
             try
             {
-                var client = _clientRepository.GetClientById(purchaseRequest.updatePurchaseRequest.ClientId).Result;
+                var prc = new Purchase();
                 decimal totalMoney = 0;
-                var result = _mapper.Map<Purchase>(purchaseRequest.updatePurchaseRequest);
+                List<Cake> cakeList = new List<Cake>();
 
-                if (client == null)
+                foreach (var id in purchaseRequest.updatePurchaseRequest.Cakes)
+                {
+                    var cake = await _cakeRepository.GetCakeById(id);
+                    if (cake != null)
+                    {
+                        cakeList.Add(cake);
+                        totalMoney += cake.Price;
+                    }
+                }
+
+                if (cakeList.Count() == 0)
                 {
                     return new PurchaseResponse()
                     {
                         HttpStatusCode = HttpStatusCode.NotFound,
-                        Purchase = result,
-                        Message = $"Cant find client with that id: {purchaseRequest.updatePurchaseRequest.ClientId}"
+                        Purchase = null,
+                        Message = $"Please enter at least 1 valid cake Id"
                     };
                 }
 
-                foreach (var cake in purchaseRequest.updatePurchaseRequest.Cakes)
-                {
-                    totalMoney += cake.Price;
-                }
+                prc.Id = purchaseRequest.updatePurchaseRequest.Id;
+                prc.Cakes = cakeList;
+                prc.Date = DateTime.Now;
+                prc.TotalMoney = totalMoney;
+                prc.ClientId = _purchaseRepository.GetPurchasesById(prc.Id).Result.ClientId;
 
-                result.TotalMoney = totalMoney;
-                await _purchaseRepository.UpdatePurchase(result);
+                await _purchaseRepository.UpdatePurchase(prc);
 
                 return new PurchaseResponse()
                 {
                     HttpStatusCode = HttpStatusCode.OK,
-                    Purchase = result,
+                    Purchase = prc,
                     Message = "Successfully updated purchase"
                 };
             }
