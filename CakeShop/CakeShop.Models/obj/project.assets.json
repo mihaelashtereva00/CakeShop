@@ -104,11 +104,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
+      "projectUniqueName": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
       "projectName": "CakeShop.Models",
-      "projectPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
+      "projectPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
       "packagesPath": "C:\\Users\\m.shtereva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\obj\\",
+      "outputPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\m.shtereva\\AppData\\Roaming\\NuGet\\NuGet.Config",

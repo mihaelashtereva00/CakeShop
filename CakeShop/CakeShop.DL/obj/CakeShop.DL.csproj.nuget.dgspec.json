@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj": {}
+    "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj": {
+    "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj",
+        "projectUniqueName": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj",
         "projectName": "CakeShop.DL",
-        "projectPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj",
+        "projectPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj",
         "packagesPath": "C:\\Users\\m.shtereva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.DL\\obj\\",
+        "outputPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.DL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\m.shtereva\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj": {
-                "projectPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj"
+              "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj": {
+                "projectPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj"
               }
             }
           }
@@ -89,14 +89,14 @@
         }
       }
     },
-    "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj": {
+    "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
+        "projectUniqueName": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
         "projectName": "CakeShop.Models",
-        "projectPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
+        "projectPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
         "packagesPath": "C:\\Users\\m.shtereva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\obj\\",
+        "outputPath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\m.shtereva\\AppData\\Roaming\\NuGet\\NuGet.Config",
