@@ -13,9 +13,6 @@ namespace CakeShop.Validators.PurchaseValidator
 
             RuleFor(p => p.Cakes)
                 .Must(c => c.Count() > 0);
-
-            //RuleFor(p => p.ClientId)
-            //    .GreaterThan(0);
         }
     }
 }
