@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ljjRW1F3vRWA4hMOROGdgD3kY5GqLvUGDeA2ab5ukJkH9nqmAP8wTFvNkTFBJyZhPACGN7CO/4EXiLZwbRkpQ==",
+  "dgSpecHash": "3b+c85WM7ivs+cjcu8r5RrAWw8yGl3yWv8H9c1+/B4kT5sUYvepVo5Jn8UX+OW7o6QZOEokfUr2nLgONJSc+yA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj",
+  "projectFilePath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.DL\\CakeShop.DL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\m.shtereva\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\m.shtereva\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

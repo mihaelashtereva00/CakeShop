@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lfOu+Ng/0BuxjMslT/XUHDPuCc0S87FfbtGzioiVbfemhVuTZlpkJPV2p55xds/RV6WnS/MTxTfFCfxsspGBSw==",
+  "dgSpecHash": "JeL5R0hkO2gkaGys2kgUGobtlOC+yR/DD3gfuSMChDDk2W1SQ8kcsl5VzPXRj3jOShHbKqfnyPRlTPn1LaHrPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\m.shtereva\\Documents\\GithubRepo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
+  "projectFilePath": "C:\\Users\\m.shtereva\\Documents\\Repo\\CakeShop\\CakeShop\\CakeShop.Models\\CakeShop.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\m.shtereva\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\m.shtereva\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
