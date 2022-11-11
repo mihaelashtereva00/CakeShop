@@ -35,7 +35,7 @@ namespace CakeShop.DL.SqlRepositories
                                                             iterationCount: 100000,
                                                             numBytesRequested: 256 / 8));
                     client.Password = hashed;
-                    var resul = conn.ExecuteAsync(query, client);
+                    var resul = await conn.ExecuteAsync(query, client);
                     return client;t;
                 }
             }
