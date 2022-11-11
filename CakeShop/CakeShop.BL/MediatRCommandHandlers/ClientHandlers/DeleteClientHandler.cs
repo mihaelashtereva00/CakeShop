@@ -32,7 +32,7 @@ namespace CakeShop.BL.MediatRCommandHandlers.ClientHandlers
                     _logger.LogError("Insert a valid client Id");
                 }
 
-                _clientRepository.DeleteClient(request.username);
+                await _clientRepository.DeleteClient(request.username);
                 _logger.LogInformation("The client is successfully deleted");
 
                 return new ClientResponse()
