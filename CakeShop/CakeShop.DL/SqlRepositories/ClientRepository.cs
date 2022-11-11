@@ -26,8 +26,17 @@ namespace CakeShop.DL.SqlRepositories
                 {
                     await conn.OpenAsync();
                     var query = "INSERT INTO Client (Name,DateOfBirth,Username,Password, Email ) VALUES ( @Name, @DateOfBirth,  @Username,  @Password, @Email)";
+
+                    byte[] salt = RandomNumberGenerator.GetBytes(128 / 8); //divided to convert bits to bytes
+                    string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                                                            password: client.Password!,
+                                                            salt: salt,
+                                                            prf: KeyDerivationPrf.HMACSHA256,
+                                                            iterationCount: 100000,
+                                                            numBytesRequested: 256 / 8));
+                    client.Password = hashed;
                     var resul = conn.ExecuteAsync(query, client);
-                    return client;
+                    return client;t;
                 }
             }
             catch (Exception)
