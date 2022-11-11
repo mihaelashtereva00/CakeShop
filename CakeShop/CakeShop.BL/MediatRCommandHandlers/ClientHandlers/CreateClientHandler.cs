@@ -28,11 +28,12 @@ namespace CakeShop.BL.MediatRCommandHandlers.ClientHandlers
             {
                 var result = _mapper.Map<Client>(request.clientRequest);
                 await _clientRepository.CreateClient(result);
+                var response = await _clientRepository.GetClient(result.Username);
 
                 return new ClientResponse()
                 {
                     HttpStatusCode = HttpStatusCode.OK,
-                    Client = result,
+                    Client = response,
                     Message = "Successfully added client"
                 };
             }
